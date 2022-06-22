@@ -2,12 +2,25 @@ let productsArray = []
 if (localStorage.getItem("productArr") != null) {
     productsArray = JSON.parse(localStorage.getItem("productArr"))
 }
+let fruitNames = ["Apple", "Banana", "Strawberry", "Tomato", "Pears", "Grape"]
+let vegetableNames = ["Cucumber", "Corn", "Cabbages", "Carrot", "Potato", "Beet"]
+let types = ["fruit", "vegetable"]
 if (productsArray.length == 0) {
     for (let i = 0; i < 20; i++) {
-        let uname = `Apple`
-        let price = `${i + 1}`
-        let url = "img/apple.png"
-        let type = "fruit"
+        let rNT = Math.trunc(Math.random() * types.length);
+        let uname = ""
+        let rN = 0
+        if (rNT == 0) {
+            rN = Math.trunc(Math.random() * fruitNames.length);
+            uname = `${fruitNames[rN]}`
+        }
+        else{
+            rN = Math.trunc(Math.random() * vegetableNames.length);
+            uname = `${vegetableNames[rN]}`
+        }
+        let price = `${rN + 1}`
+        let url = "img/default.png"
+        let type = `${types[rNT]}`
         let product = { name: uname, price: price, img: url, type: type }
         productsArray.push(product)
     }
@@ -66,12 +79,7 @@ $("#sellForm").submit(function (e) {
         }
         function imageIsLoaded(e) {
             localStorage.setItem("img", e.target.result);
-
             let productImg = localStorage.getItem("img")
-            setTimeout(() => {
-                localStorage.removeItem("img")
-
-            }, 1000);
             let product = {
                 name: productName,
                 price: productPrice,
@@ -95,34 +103,6 @@ $("#sellForm").submit(function (e) {
         e.preventDefault()
     }
 });
-// $("#searchInput").change(function () {
-//     searchForProducts()
-// });
-// function searchForProducts() {
-//     let searchedInput = $("#searchInput").val();
-//     for (let i = 0; i < productsArray.length; i++) {
-//         if (productsArray[i].name == searchedInput) {
-//             console.log("name matched")
-//             viewProducts(i)
-//         }
-//         else if (productsArray[i].price == searchedInput) {
-//             $("#viewProducts").text("No products found with given search")
-//             console.log("price matched")
-//         }
-
-//         else if (productsArray[i].price == searchedInput) {
-//             $("#viewProducts").text("No products found with given search")
-//             console.log("price matched")
-//         }
-//         else if (searchedInput == "") {
-//             viewAll()
-//         }
-//         else {
-//             $("#viewProducts").empty()
-//             $("#viewProducts").text("No products found with given search")
-//         }
-//     }
-// }
 $("#nameSearchForm").submit(function (e) {
     e.preventDefault();
     $("#viewProducts").empty();
