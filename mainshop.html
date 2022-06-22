@@ -15,21 +15,61 @@
 <body>
     <div id="top">
         <img src="img/logo.png" alt="Reload the page">
-        <p>Fruit</p>Shop™
+        <p>Fruit&Vegetables</p>Shop™
     </div>
     <div id="header">
+        <div class="hPart"><a id="searchShow">Search</a></div>
         <div class="hPart"><a href="index.html">Home</a></div>
-        <span><label for="searchInput">Search:</label><input id="searchInput" type="search"
-                placeholder="Search for fruits"></span>
         <div class="hPart" id="sellShow">Sell</div>
+    </div>
+    <div id="searchDiv">
+        <span>
+            <div>
+                <h3>Search for name</h3>
+                <form id="nameSearchForm">
+                    <input onkeydown="return /[a-z]/i.test(event.key)" id="nameSearch" type="search"
+                        placeholder="Product name" required>
+                </form>
+                <input type="submit" value="Search" id="nameSearchBtn" form="nameSearchForm">
+            </div>
+            <div>
+                <h3>Search for price</h3>
+                <form id="priceSearchForm">
+                    <p>Min:</p><input onkeydown="return /[0-9]/i.test(event.key)" id="maxPriceSearch" type="search"
+                        placeholder="Minimum price" required>
+                    <p>Max:</p><input onkeydown="return /[0-9]/i.test(event.key)" id="minPriceSearch" type="search"
+                        placeholder="Maximum price" required>
+                </form>
+                <input type="submit" value="Search" id="priceSearchBtn" form="priceSearchForm">
+            </div>
+            <div>
+                <h3>Search for type</h3>
+                <form id="typeSearchForm">
+                    <select id="typeSearch" required>
+                        <option selected disabled value="">Select one!</option>
+                        <option value="fruit">Fruit</option>
+                        <option value="vegetable">vegetable</option>
+                    </select>
+                </form>
+                <input type="submit" value="Search" id="typeSearchBtn" form="typeSearchForm">
+            </div>
+        </span>
     </div>
     <div id="sellDiv">
         <form id="sellForm">
+            <span>
+                <label for="typeInput">Type:</label><select id="typeInput" required>
+                    <option disabled selected value="">Select your product type!</option>
+                    <option value="fruit">Fruit</option>
+                    <option value="vegetable">Vegetable</option>
+                </select>
+            </span>
             <span><label for="nameInput">Name:</label>
-                <input  onkeydown="return /[a-z]/i.test(event.key)" id="nameInput" type="text" placeholder="Fruit name" maxlength="22" required>
+                <input onkeydown="return /[a-z]/i.test(event.key)" id="nameInput" type="text" placeholder="Product name"
+                    maxlength="22" required>
             </span>
             <span><label for="priceInput">Price:</label>
-                <input id="priceInput" placeholder="Fruit price" type="number" required>
+                <input id="priceInput" placeholder="Product price" type="number" required>
             </span>
             <span>
                 <input id="imgInput" type="file" accept="image/*" required>

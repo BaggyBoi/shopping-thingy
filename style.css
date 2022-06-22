@@ -1,6 +1,7 @@
-::-webkit-scrollbar{
+::-webkit-scrollbar {
     width: 0;
 }
+
 * {
     padding: 0;
     margin: 0;
@@ -38,14 +39,16 @@ body {
     top: 0px;
     z-index: 1;
 }
-#searchInput{
+
+#searchInput {
     height: 40px;
     font-size: 35px;
     border-radius: 25px;
-    padding:0 15px;
+    padding: 0 15px;
     background-color: black;
     border: none;
 }
+
 .hPart {
     transition: .5s;
 }
@@ -165,7 +168,8 @@ img {
     width: 100px;
     height: 100px;
 }
-#foot{
+
+#foot {
     margin-top: 100px;
     width: 100%;
     font-size: 20px;
@@ -175,22 +179,25 @@ img {
     justify-content: space-evenly;
     height: 325px;
 }
-#foot span{
+
+#foot span {
     display: flex;
     flex-direction: column;
     height: 250px;
     justify-content: space-between;
 }
-#footEnd{
+
+#footEnd {
     margin-top: 25px;
     width: 100%;
     display: flex;
-    justify-content: space-evenly;   
+    justify-content: space-evenly;
     height: 50px;
-    background-color: rgb(30,30,30);
+    background-color: rgb(30, 30, 30);
     align-items: center;
 }
-#toptext{
+
+#toptext {
     margin: 0 auto 50px;
     font-size: 45px;
     height: 50px;
@@ -199,15 +206,17 @@ img {
     justify-content: center;
     align-items: center;
 }
-#viewProducts{
+
+#viewProducts {
     width: 90%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    align-items: center;   
+    align-items: center;
     margin: 0 auto;
 }
-.product{
+
+.product {
     width: 75%;
     height: 200px;
     /* border: 1px solid whitesmoke; */
@@ -219,18 +228,30 @@ img {
     font-size: 45px;
     margin: 50px 0;
 }
-.img{
+
+.img {
     width: 200px;
     height: 200px;
     border-radius: 50px;
 }
-input{
+
+input {
     border: none;
     background-color: black;
 }
-#sellDiv{
+
+select {
+    border: none;
+    background-color: black;
+}
+
+option {
+    font-size: 20px;
+}
+
+#sellDiv {
     width: 40%;
-    background-color: rgba(20,20,20,0.9);
+    background-color: rgba(20, 20, 20, 0.9);
     border: 5px solid whitesmoke;
     border-radius: 50px;
     margin: 0 auto;
@@ -241,10 +262,12 @@ input{
     left: 30%;
     height: 900px;
 }
-#imgInput{
+
+#imgInput {
     width: 200px !important;
 }
-#sellForm{
+
+#sellForm {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -252,8 +275,9 @@ input{
     flex-direction: column;
     transform: scale(1.5);
 }
-#sellButton{
-    background-color: rgb(0,100,0);
+
+#sellButton {
+    background-color: rgb(0, 100, 0);
     width: 75px;
     height: 30px;
     display: flex;
@@ -261,10 +285,49 @@ input{
     align-items: center;
     border-radius: 10px;
 }
-#goBack{
+
+#goBack {
     background-color: black;
     border: none;
 }
-#goBack:hover{
-    cursor:pointer;
+
+#goBack:hover {
+    cursor: pointer;
+}
+
+#searchDiv {
+    width: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(20, 20, 20, 0.9);
+    height: 800px;
+    margin-top: -100px;
+    position: absolute;
+    justify-content: space-evenly;
+    align-items: center;
+    overflow: hidden;
+    border-right: 1px solid whitesmoke;
+    border-bottom: 1px solid whitesmoke;
+    border-top: 1px solid whitesmoke;
+    transition: .5s;
+}
+.shown{
+    width: 400px !important;
+}
+#searchDiv span {
+    transform: scale(2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 400px;
+}
+
+#searchDiv span div {
+    border-bottom: 1px solid whitesmoke;
+    border-top: 1px solid whitesmoke;
+}
+
+#searchDiv span form {
+    display: flex;
+    flex-direction: column;
 }
